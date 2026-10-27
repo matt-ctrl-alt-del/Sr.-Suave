@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cesytidrakwxn"]
+
+[ext_resource type="Script" uid="uid://b1gyug6j0fj85" path="res://scripts/level_1.gd" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://djy3vu26f4412" path="res://scenes/fade_transition.tscn" id="2_bswci"]
+
+[node name="level1" type="Node2D" unique_id=2020426106]
+script = ExtResource("1_014kd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=694653464]
+
+[node name="Fade_transition" parent="CanvasLayer" unique_id=1359299827 instance=ExtResource("2_bswci")]

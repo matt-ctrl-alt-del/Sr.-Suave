@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cmsdpawedefoa"]
+
+[ext_resource type="Script" uid="uid://br2fiwrg88tfx" path="res://scripts/thanks_screen.gd" id="1_brk4o"]
+[ext_resource type="PackedScene" uid="uid://djy3vu26f4412" path="res://scenes/fade_transition.tscn" id="2_urebk"]
+
+[node name="thanks_screen" type="Node2D" unique_id=1567009810]
+script = ExtResource("1_brk4o")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=430112353]
+
+[node name="Fade_transition" parent="CanvasLayer" unique_id=1359299827 instance=ExtResource("2_urebk")]
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1421792524]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Restart" type="TextureButton" parent="CenterContainer" unique_id=127884946]
+layout_mode = 2
+
+[node name="Exit" type="TextureButton" parent="CenterContainer" unique_id=1834680076]
+layout_mode = 2
+
+[connection signal="pressed" from="CenterContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CenterContainer/Exit" to="." method="_on_exit_pressed"]
