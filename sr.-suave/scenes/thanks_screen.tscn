@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://br2fiwrg88tfx" path="res://scripts/thanks_screen.gd" id="1_brk4o"]
 [ext_resource type="PackedScene" uid="uid://djy3vu26f4412" path="res://scenes/fade_transition.tscn" id="2_urebk"]
+[ext_resource type="PackedScene" uid="uid://dp2d4rd1ycru5" path="res://scenes/ripple_transition.tscn" id="3_2usq2"]
 
 [node name="thanks_screen" type="Node2D" unique_id=1567009810]
 script = ExtResource("1_brk4o")
@@ -9,6 +10,9 @@ script = ExtResource("1_brk4o")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=430112353]
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=1359299827 instance=ExtResource("2_urebk")]
+visible = false
+
+[node name="Ripple_transition" parent="CanvasLayer" unique_id=195691908 instance=ExtResource("3_2usq2")]
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1421792524]
 offset_right = 40.0

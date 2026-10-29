@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b1gyug6j0fj85" path="res://scripts/level_1.gd" id="1_014kd"]
 [ext_resource type="PackedScene" uid="uid://djy3vu26f4412" path="res://scenes/fade_transition.tscn" id="2_bswci"]
+[ext_resource type="PackedScene" uid="uid://dp2d4rd1ycru5" path="res://scenes/ripple_transition.tscn" id="3_rus8k"]
+[ext_resource type="PackedScene" uid="uid://bwdsoeq2axmwy" path="res://scenes/map_1.tscn" id="4_5xbjy"]
 
 [node name="level1" type="Node2D" unique_id=2020426106]
 script = ExtResource("1_014kd")
@@ -9,3 +11,9 @@ script = ExtResource("1_014kd")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=694653464]
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=1359299827 instance=ExtResource("2_bswci")]
+visible = false
+
+[node name="Ripple_transition" parent="CanvasLayer" unique_id=195691908 instance=ExtResource("3_rus8k")]
+visible = false
+
+[node name="House" parent="." unique_id=2045100116 instance=ExtResource("4_5xbjy")]
