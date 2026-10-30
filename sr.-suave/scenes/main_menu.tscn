@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://14e156k4gmhd"]
 
 [ext_resource type="Script" uid="uid://crgbemyvkao7w" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="PackedScene" uid="uid://djy3vu26f4412" path="res://scenes/fade_transition.tscn" id="2_ekxnf"]
 [ext_resource type="Texture2D" uid="uid://yv28tp8x66bm" path="res://sprites/ui/buttons/play/play.png" id="3_5dd4i"]
 [ext_resource type="Texture2D" uid="uid://ce8qayky3rfcs" path="res://sprites/ui/prologue_animate2.png" id="3_bqqt6"]
 [ext_resource type="PackedScene" uid="uid://dp2d4rd1ycru5" path="res://scenes/ripple_transition.tscn" id="3_lgwnu"]
@@ -398,9 +397,6 @@ mouse_filter = 2
 script = ExtResource("1_l6cm7")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2053138574]
-
-[node name="Fade_transition" parent="CanvasLayer" unique_id=1359299827 instance=ExtResource("2_ekxnf")]
-visible = false
 
 [node name="Ripple_transition" parent="CanvasLayer" unique_id=195691908 instance=ExtResource("3_lgwnu")]
 

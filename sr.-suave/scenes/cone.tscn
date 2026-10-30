@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://keflo6s88htq"]
+
+[ext_resource type="Texture2D" uid="uid://bnssrylpsqipk" path="res://sprites/items/cone/cone-Sheet.png" id="1_04qlx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ks2v0"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pvhk"]
+atlas = ExtResource("1_04qlx")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_666jn"]
+atlas = ExtResource("1_04qlx")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iemwe"]
+atlas = ExtResource("1_04qlx")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddcyk"]
+atlas = ExtResource("1_04qlx")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s0vbq"]
+atlas = ExtResource("1_04qlx")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6vwy"]
+atlas = ExtResource("1_04qlx")
+region = Rect2(0, 80, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3u4yb"]
+atlas = ExtResource("1_04qlx")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3inec"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pvhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_666jn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iemwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddcyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s0vbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6vwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3u4yb")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="cone" type="Area2D" unique_id=1019146576]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1483384267]
+shape = SubResource("RectangleShape2D_ks2v0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=670016505]
+sprite_frames = SubResource("SpriteFrames_3inec")
+autoplay = "default"

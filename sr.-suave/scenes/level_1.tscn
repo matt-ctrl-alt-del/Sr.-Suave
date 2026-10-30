@@ -1,19 +1,44 @@
 [gd_scene format=3 uid="uid://cesytidrakwxn"]
 
 [ext_resource type="Script" uid="uid://b1gyug6j0fj85" path="res://scripts/level_1.gd" id="1_014kd"]
-[ext_resource type="PackedScene" uid="uid://djy3vu26f4412" path="res://scenes/fade_transition.tscn" id="2_bswci"]
+[ext_resource type="PackedScene" uid="uid://dpnnh8moxv0ho" path="res://scenes/player.tscn" id="2_4nkto"]
+[ext_resource type="PackedScene" uid="uid://6ns4of2yrfve" path="res://scenes/exit.tscn" id="2_15mv3"]
+[ext_resource type="PackedScene" uid="uid://d42hwtmml6x6" path="res://scenes/sr_suave.tscn" id="2_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://dp2d4rd1ycru5" path="res://scenes/ripple_transition.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://bwdsoeq2axmwy" path="res://scenes/map_1.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://c5diui0qddxsy" path="res://scenes/tracker_stage_1.tscn" id="6_pa8r4"]
 
 [node name="level1" type="Node2D" unique_id=2020426106]
 script = ExtResource("1_014kd")
 
+[node name="exit" parent="." unique_id=885086380 instance=ExtResource("2_15mv3")]
+position = Vector2(268, 632)
+
+[node name="Sr_Suave" parent="." unique_id=688980508 instance=ExtResource("2_fcfvj")]
+position = Vector2(1066, 592)
+
+[node name="player_level1" parent="." unique_id=151006826 instance=ExtResource("2_4nkto")]
+position = Vector2(270, 600)
+scale = Vector2(0.7, 0.7)
+collision_layer = 3
+collision_mask = 3
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=694653464]
 
-[node name="Fade_transition" parent="CanvasLayer" unique_id=1359299827 instance=ExtResource("2_bswci")]
-visible = false
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1472054453]
+offset_left = 18.0
+offset_top = 87.0
+offset_right = 130.0
+offset_bottom = 136.0
+text = "Task:
+Find Sr. Suave."
 
 [node name="Ripple_transition" parent="CanvasLayer" unique_id=195691908 instance=ExtResource("3_rus8k")]
-visible = false
+
+[node name="Tracker_Stage1" parent="CanvasLayer" unique_id=815521116 instance=ExtResource("6_pa8r4")]
 
 [node name="House" parent="." unique_id=2045100116 instance=ExtResource("4_5xbjy")]
+z_index = -1
+
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
+[connection signal="body_entered" from="Sr_Suave" to="." method="_on_sr_suave_body_entered"]

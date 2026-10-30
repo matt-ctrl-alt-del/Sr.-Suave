@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://dpnnh8moxv0ho"]
+
+[ext_resource type="Texture2D" uid="uid://8k71dx63clxg" path="res://sprites/player/Lvl1_Eureka.png" id="1_82471"]
+[ext_resource type="Script" uid="uid://bfvq38dflfpr1" path="res://scripts/player_level_1.gd" id="1_ffl0g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffl0g"]
+atlas = ExtResource("1_82471")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yj2dw"]
+atlas = ExtResource("1_82471")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3ub5"]
+atlas = ExtResource("1_82471")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlmdx"]
+atlas = ExtResource("1_82471")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3h78v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffl0g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yj2dw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3ub5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlmdx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u34yt"]
+size = Vector2(16, 20)
+
+[node name="player" type="CharacterBody2D" unique_id=151006826]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_ffl0g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1242937737]
+sprite_frames = SubResource("SpriteFrames_3h78v")
+autoplay = "default"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1001997104]
+zoom = Vector2(4, 4)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1640442979]
+shape = SubResource("RectangleShape2D_u34yt")

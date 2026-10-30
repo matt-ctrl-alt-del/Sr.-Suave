@@ -1,0 +1,86 @@
+[gd_scene format=3 uid="uid://o3clibni02ot"]
+
+[ext_resource type="Script" uid="uid://dt8v1ichjaxa2" path="res://scripts/level_2.gd" id="1_6cvei"]
+[ext_resource type="PackedScene" uid="uid://dpnnh8moxv0ho" path="res://scenes/player.tscn" id="1_eqxsl"]
+[ext_resource type="PackedScene" uid="uid://346fltwfk487" path="res://scenes/map_2.tscn" id="2_b4j7a"]
+[ext_resource type="PackedScene" uid="uid://dp2d4rd1ycru5" path="res://scenes/ripple_transition.tscn" id="3_wo48x"]
+[ext_resource type="PackedScene" uid="uid://va8pim4rgrx7" path="res://scenes/tracker_stage_2.tscn" id="4_y0kc7"]
+[ext_resource type="PackedScene" uid="uid://5w6fssgk5y34" path="res://scenes/box.tscn" id="5_ne2mo"]
+[ext_resource type="PackedScene" uid="uid://keflo6s88htq" path="res://scenes/cone.tscn" id="6_6cvei"]
+[ext_resource type="Script" uid="uid://cuysb1me2mlbr" path="res://scripts/sub_viewport.gd" id="6_172wr"]
+[ext_resource type="Texture2D" uid="uid://bw8uwdmn0wamp" path="res://sprites/map/minimap/Screenshot From 2026-10-29 21-39-53.png" id="6_hey2k"]
+[ext_resource type="Texture2D" uid="uid://cq1si4b46otan" path="res://sprites/player/eurekasolo.png" id="6_que50"]
+[ext_resource type="PackedScene" uid="uid://dut5wgoni4ia" path="res://scenes/cube.tscn" id="7_que50"]
+[ext_resource type="PackedScene" uid="uid://bl8jbwv0hsmql" path="res://scenes/diamond.tscn" id="8_hey2k"]
+[ext_resource type="PackedScene" uid="uid://6ns4of2yrfve" path="res://scenes/exit.tscn" id="13_g2hoc"]
+
+[node name="level_2" type="Node2D" unique_id=623458031]
+script = ExtResource("1_6cvei")
+
+[node name="player" parent="." unique_id=151006826 instance=ExtResource("1_eqxsl")]
+position = Vector2(20.999998, 514.99994)
+scale = Vector2(0.7, 0.7)
+collision_layer = 3
+collision_mask = 3
+
+[node name="map2" parent="." unique_id=1995461814 instance=ExtResource("2_b4j7a")]
+z_index = -1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1122266722]
+
+[node name="Ripple_transition" parent="CanvasLayer" unique_id=195691908 instance=ExtResource("3_wo48x")]
+
+[node name="Tracker_stage2" parent="CanvasLayer" unique_id=1458387740 instance=ExtResource("4_y0kc7")]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=109831793]
+offset_left = 33.0
+offset_top = 106.0
+offset_right = 170.0
+offset_bottom = 129.0
+text = "Items Collected: 0"
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=453581284]
+offset_left = 1028.0
+offset_top = 25.0
+offset_right = 1128.0
+offset_bottom = 125.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer" unique_id=331744757]
+handle_input_locally = false
+size = Vector2i(100, 100)
+render_target_update_mode = 4
+script = ExtResource("6_172wr")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=788112972]
+texture = ExtResource("6_hey2k")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport" unique_id=757160084]
+zoom = Vector2(0.45, 0.45)
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/SubViewportContainer" unique_id=2066954908]
+position = Vector2(50, 50)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("6_que50")
+
+[node name="Node" type="Node" parent="." unique_id=1368142577]
+
+[node name="box" parent="Node" unique_id=1738692992 instance=ExtResource("5_ne2mo")]
+position = Vector2(958, 305)
+
+[node name="cone" parent="Node" unique_id=1019146576 instance=ExtResource("6_6cvei")]
+position = Vector2(56, 163)
+
+[node name="cube" parent="Node" unique_id=818474769 instance=ExtResource("7_que50")]
+position = Vector2(442, 523)
+
+[node name="diamond" parent="Node" unique_id=271761177 instance=ExtResource("8_hey2k")]
+position = Vector2(593, 30)
+
+[node name="exit" parent="." unique_id=885086380 instance=ExtResource("13_g2hoc")]
+position = Vector2(12, 615)
+
+[connection signal="body_entered" from="Node/box" to="." method="_on_box_body_entered"]
+[connection signal="body_entered" from="Node/cone" to="." method="_on_cone_body_entered"]
+[connection signal="body_entered" from="Node/cube" to="." method="_on_cube_body_entered"]
+[connection signal="body_entered" from="Node/diamond" to="." method="_on_diamond_body_entered"]
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]
