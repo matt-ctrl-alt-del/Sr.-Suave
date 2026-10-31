@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://va8pim4rgrx7" path="res://scenes/tracker_stage_2.tscn" id="4_y0kc7"]
 [ext_resource type="PackedScene" uid="uid://5w6fssgk5y34" path="res://scenes/box.tscn" id="5_ne2mo"]
 [ext_resource type="PackedScene" uid="uid://keflo6s88htq" path="res://scenes/cone.tscn" id="6_6cvei"]
-[ext_resource type="Script" uid="uid://cuysb1me2mlbr" path="res://scripts/sub_viewport.gd" id="6_172wr"]
-[ext_resource type="Texture2D" uid="uid://bw8uwdmn0wamp" path="res://sprites/map/minimap/Screenshot From 2026-10-29 21-39-53.png" id="6_hey2k"]
+[ext_resource type="Script" uid="uid://cuysb1me2mlbr" path="res://scripts/sub_viewportlvl2.gd" id="6_172wr"]
+[ext_resource type="Texture2D" uid="uid://bw8uwdmn0wamp" path="res://sprites/map/minimap/minimap_level2.png" id="6_hey2k"]
 [ext_resource type="Texture2D" uid="uid://cq1si4b46otan" path="res://sprites/player/eurekasolo.png" id="6_que50"]
 [ext_resource type="PackedScene" uid="uid://dut5wgoni4ia" path="res://scenes/cube.tscn" id="7_que50"]
 [ext_resource type="PackedScene" uid="uid://bl8jbwv0hsmql" path="res://scenes/diamond.tscn" id="8_hey2k"]
@@ -39,7 +39,7 @@ offset_top = 102.0
 offset_right = 275.0
 offset_bottom = 177.0
 text = "Task:
-Find valuable items for Sr. Suave
+Find antique mystic items for Sr. Suave
 Items Collected: 0"
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer" unique_id=453581284]

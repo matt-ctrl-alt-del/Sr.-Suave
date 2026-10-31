@@ -14,5 +14,11 @@ func _on_sr_suave_body_entered(body: Node2D) -> void:
 	$Sr_Suave/PointLight2D.show()
 	$CanvasLayer/Tracker_stage3/HBoxContainer/sr_suave.modulate.a = 1.0
 	$CanvasLayer/Label.text = "Task:
-			Guide Sr. Suave to the Exit"
+		Beware of the intruders!
+		Guide Sr. Suave to the Exit"
 	
+func _on_killzone_body_entered(body: Node2D) -> void:
+	$CanvasLayer/Ripple_transition.show()
+	$CanvasLayer/Ripple_transition/AnimatedSprite2D.play("fade_in")
+	await $CanvasLayer/Ripple_transition/AnimatedSprite2D.animation_finished
+	get_tree().reload_current_scene()

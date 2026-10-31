@@ -54,6 +54,7 @@ func _on_exit_body_entered(body: Node2D) -> void:
 	if items_collected == 4:
 		$CanvasLayer/Ripple_transition.show()
 		$CanvasLayer/Ripple_transition/AnimatedSprite2D.play("fade_out")
+		await $CanvasLayer/Ripple_transition/AnimatedSprite2D.animation_finished
 		get_tree().change_scene_to_file("res://scenes/level_3.tscn")
 	else:
 		$CanvasLayer/Label.text = "You only have " + (str(items_collected)) + " items collected.
