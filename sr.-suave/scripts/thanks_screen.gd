@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_exit_pressed() -> void:
-	$CamvasLayer/Ripple_transition.show()
+	$CanvasLayer/Ripple_transition.show()
 	$CanvasLayer/Ripple_transition/AnimatedSprite2D.play("fade_in")
 	await $CanvasLayer/Ripple_transition/AnimatedSprite2D.animation_finished
 	get_tree().quit()

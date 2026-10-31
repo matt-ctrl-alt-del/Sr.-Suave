@@ -20,6 +20,7 @@ func _on_sr_suave_body_entered(body: Node2D) -> void:
 
 func _on_exit_body_entered(body: Node2D) -> void:
 	if can_exit == true:
+		$CanvasLayer/Ripple_transition.show()
 		$CanvasLayer/Ripple_transition/AnimatedSprite2D.play("fade_in")
 		await $CanvasLayer/Ripple_transition/AnimatedSprite2D.animation_finished
 		get_tree().change_scene_to_file("res://scenes/level_2.tscn")

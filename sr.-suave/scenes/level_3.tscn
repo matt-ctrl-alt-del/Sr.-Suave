@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://cq1si4b46otan" path="res://sprites/player/eurekasolo.png" id="6_ha73p"]
 [ext_resource type="PackedScene" uid="uid://d42hwtmml6x6" path="res://scenes/sr_suave.tscn" id="6_p6vls"]
 [ext_resource type="PackedScene" uid="uid://cn8t6iyfh7ujl" path="res://scenes/enemy.tscn" id="10_vcx5n"]
+[ext_resource type="PackedScene" uid="uid://brhvh21ylk5hh" path="res://scenes/enemy_2.tscn" id="11_56dhn"]
+[ext_resource type="PackedScene" uid="uid://6ns4of2yrfve" path="res://scenes/exit.tscn" id="12_ax3dk"]
 
 [sub_resource type="Gradient" id="Gradient_hhfj6"]
 offsets = PackedFloat32Array(0, 0.53614455)
@@ -22,6 +24,27 @@ fill_from = Vector2(0.5, 0.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_662ny"]
 size = Vector2(9, 9)
+
+[sub_resource type="Gradient" id="Gradient_q2dsb"]
+offsets = PackedFloat32Array(0, 0.57228917)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hui80"]
+gradient = SubResource("Gradient_q2dsb")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_005ff"]
+size = Vector2(9.5, 9.5)
+
+[sub_resource type="Gradient" id="Gradient_ax3dk"]
+offsets = PackedFloat32Array(0.030120483, 0.60240966)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_662ny"]
+gradient = SubResource("Gradient_ax3dk")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="level3" type="Node2D" unique_id=826065631]
 script = ExtResource("1_1pn4d")
@@ -100,5 +123,29 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="enemy/killzone" unique_id=30450031]
 shape = SubResource("RectangleShape2D_662ny")
 
+[node name="PointLight2D" type="PointLight2D" parent="enemy" unique_id=1885262036]
+color = Color(1, 0, 0, 1)
+shadow_enabled = true
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_hui80")
+
+[node name="enemy2" parent="." unique_id=1879709596 instance=ExtResource("11_56dhn")]
+position = Vector2(627, 359)
+
+[node name="killzone" type="Area2D" parent="enemy2" unique_id=1490402728]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="enemy2/killzone" unique_id=554871012]
+shape = SubResource("RectangleShape2D_005ff")
+
+[node name="PointLight2D" type="PointLight2D" parent="enemy2" unique_id=359492065]
+color = Color(1, 0, 0, 1)
+shadow_enabled = true
+shadow_filter = 2
+texture = SubResource("GradientTexture2D_662ny")
+
+[node name="exit" parent="." unique_id=885086380 instance=ExtResource("12_ax3dk")]
+position = Vector2(269, 633)
+
 [connection signal="body_entered" from="Sr_Suave" to="." method="_on_sr_suave_body_entered"]
 [connection signal="body_entered" from="enemy/killzone" to="." method="_on_killzone_body_entered"]
+[connection signal="body_entered" from="exit" to="." method="_on_exit_body_entered"]

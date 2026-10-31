@@ -1,5 +1,7 @@
 extends Node2D
 
+var can_exit = false
+
 func _ready() -> void:
 	$CanvasLayer/Tracker_stage3/HBoxContainer/sr_suave.modulate.a = 0.25
 	$CanvasLayer/Ripple_transition/AnimatedSprite2D.play("fade_out")
@@ -16,9 +18,22 @@ func _on_sr_suave_body_entered(body: Node2D) -> void:
 	$CanvasLayer/Label.text = "Task:
 		Beware of the intruders!
 		Guide Sr. Suave to the Exit"
+	can_exit = true
 	
 func _on_killzone_body_entered(body: Node2D) -> void:
 	$CanvasLayer/Ripple_transition.show()
 	$CanvasLayer/Ripple_transition/AnimatedSprite2D.play("fade_in")
 	await $CanvasLayer/Ripple_transition/AnimatedSprite2D.animation_finished
 	get_tree().reload_current_scene()
+
+func _on_exit_body_entered(body: Node2D) -> void:
+	if can_exit == true:
+		$enemy.queue_free()
+		$enemy2.queue_free()
+		$CanvasLayer/Ripple_transition.show()
+		$CanvasLayer/Ripple_transition/AnimatedSprite2D.play("fade_in")
+		await $CanvasLayer/Ripple_transition/AnimatedSprite2D.animation_finished
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	else:
+		$CanvasLayer/Label.text = "Task:
+You have to find Sr. Suave and then go to the exit!"

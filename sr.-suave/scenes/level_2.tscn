@@ -29,7 +29,6 @@ z_index = -1
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1122266722]
 
 [node name="Ripple_transition" parent="CanvasLayer" unique_id=195691908 instance=ExtResource("3_wo48x")]
-visible = false
 
 [node name="Tracker_stage2" parent="CanvasLayer" unique_id=1458387740 instance=ExtResource("4_y0kc7")]
 

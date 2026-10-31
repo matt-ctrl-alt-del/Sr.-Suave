@@ -12,7 +12,9 @@ func _ready() -> void:
 	$CanvasLayer/Ripple_transition.hide()
 
 func _process(delta: float) -> void:
-	pass
+	if items_collected == 4:
+		$CanvasLayer/Label.text = "Task:
+Go to the exit."
 
 func _on_box_body_entered(body: Node2D) -> void:
 	$Node/box.queue_free()
@@ -53,7 +55,7 @@ Items Collected: " + (str(items_collected))
 func _on_exit_body_entered(body: Node2D) -> void:
 	if items_collected == 4:
 		$CanvasLayer/Ripple_transition.show()
-		$CanvasLayer/Ripple_transition/AnimatedSprite2D.play("fade_out")
+		$CanvasLayer/Ripple_transition/AnimatedSprite2D.play("fade_in")
 		await $CanvasLayer/Ripple_transition/AnimatedSprite2D.animation_finished
 		get_tree().change_scene_to_file("res://scenes/level_3.tscn")
 	else:
