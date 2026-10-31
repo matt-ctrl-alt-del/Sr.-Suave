@@ -11,7 +11,6 @@ extends Control
 func _ready() -> void:
 	fade()
 
-
 func fade() -> void:
 	splash_screen.modulate.a = 0.0
 	var tween = self.create_tween()

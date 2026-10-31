@@ -16,6 +16,7 @@ position = Vector2(268, 632)
 
 [node name="Sr_Suave" parent="." unique_id=688980508 instance=ExtResource("2_fcfvj")]
 position = Vector2(1066, 592)
+scale = Vector2(0.8, 0.8)
 
 [node name="player_level1" parent="." unique_id=151006826 instance=ExtResource("2_4nkto")]
 position = Vector2(270, 600)
