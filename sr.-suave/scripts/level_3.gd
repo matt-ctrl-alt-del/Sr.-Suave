@@ -1,6 +1,7 @@
 extends Node2D
 
 var can_exit = false
+var is_restarting = false
 
 func _ready() -> void:
 	$CanvasLayer/Tracker_stage3/HBoxContainer/sr_suave.modulate.a = 0.25
@@ -21,6 +22,9 @@ func _on_sr_suave_body_entered(body: Node2D) -> void:
 	can_exit = true
 	
 func _on_killzone_body_entered(body: Node2D) -> void:
+	if is_restarting:
+		return
+	is_restarting = true
 	$CanvasLayer/Ripple_transition.show()
 	$CanvasLayer/Ripple_transition/AnimatedSprite2D.play("fade_in")
 	await $CanvasLayer/Ripple_transition/AnimatedSprite2D.animation_finished
