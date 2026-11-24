@@ -386,11 +386,9 @@ animations = [{
 
 [node name="Main_menu" type="Control" unique_id=435000898]
 layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -401,9 +399,14 @@ script = ExtResource("1_l6cm7")
 [node name="Ripple_transition" parent="CanvasLayer" unique_id=195691908 instance=ExtResource("3_lgwnu")]
 
 [node name="Control" type="Control" parent="." unique_id=2134326869]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Play" type="TextureButton" parent="Control" unique_id=644200287]
 z_index = 1
