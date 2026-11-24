@@ -15,6 +15,10 @@ D - Move right.
 <h3> Context: </h3>
 Here I tried to mix the concept from my previous games of tilemap movement but implemented them only on enemies so the players can have freedom of movement. I was quite unsatisfied with the art and some ui art were unused. However I have learned a lot of things with the project. I became more efficient such as learning to use Animated sprites as animations or transitions rather than relying on color rect scenes as transitions. Then I explored more in the movement and the overall flexibility of the features I am already using such as making a 5 item tracker instead of my usual 4 and looking if something breaks. It was a fun experience making the game.
 
+<h3> Play: </h3>
+It can be played at: 
+https://matt-not-found.itch.io/sr-suave
+
 <h3> Tools: </h3>
 I used Godot and Gdscript, for the art I used Aseprite/Libresprite. 
 
