@@ -23,3 +23,9 @@ No AI was used in writing the code or making the art.
 
 <h3> Acknowledgments: </h3>
 This game is a project for #terra (Week #2) @Hack Club!
+
+<h3> Screenshots: </h3>
+<img width="347" height="196" alt="sBMJje" src="https://github.com/user-attachments/assets/629de54d-1570-4fb6-ac6e-dbf975b3cb41" />
+<img width="347" height="196" alt="M8OJHj" src="https://github.com/user-attachments/assets/ce9528c0-bf1a-4417-8313-5bfd52030f82" />
+<img width="347" height="196" alt="g1+uCt" src="https://github.com/user-attachments/assets/fc9cb1a4-a790-4bec-aac9-633c97c1f515" />
+<img width="347" height="196" alt="2Dvg25" src="https://github.com/user-attachments/assets/43301c41-b94b-4462-97b9-80f6abad7792" />
